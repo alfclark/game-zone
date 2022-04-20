@@ -1,18 +1,28 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>Welcome to the Game Zone</h1>
+    <div class="choose-msg">
+      <i class="fa-solid fa-arrow-left"></i>
+      <h2>Choose a game from the menu</h2>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
   name: "HomeView",
-  components: {
-    HelloWorld,
-  },
+  components: {},
 };
 </script>
+
+<style scoped>
+.choose-msg {
+  display: flex;
+  animation: shift1 2s infinite, show1 5s forwards;
+  align-items: center;
+  justify-content: center;
+}
+.choose-msg i {
+  margin: 1rem;
+}
+</style>
