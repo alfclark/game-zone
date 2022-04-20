@@ -2,10 +2,6 @@
   <div class="home">
     <i class="fa-solid fa-gamepad"></i>
     <h1>Welcome to the Game Zone</h1>
-    <div class="choose-msg">
-      <i class="fa-solid fa-arrow-left"></i>
-      <h2>Choose a game from the menu</h2>
-    </div>
     <div class="games">
       <h1>
         In this site you can play:
@@ -25,6 +21,11 @@
         <!-- Scroller End -->
       </h1>
     </div>
+    <div class="choose-msg">
+      <i class="fa-solid fa-dragon"></i>
+      <h2>Choose a game from the menu</h2>
+      <i class="fa-solid fa-dragon"></i>
+    </div>
   </div>
 </template>
 
@@ -42,7 +43,7 @@ export default {
   align-items: center;
   justify-content: center;
   color: white;
-  height: 100vh;
+  margin: 10rem 0;
 }
 .home .fa-gamepad {
   font-size: 4rem;
@@ -55,7 +56,7 @@ export default {
 }
 .choose-msg h2 {
   font-size: 1rem;
-  margin: 0;
+  margin: 3rem 0;
 }
 .choose-msg i {
   font-size: 1rem;
