@@ -50,13 +50,13 @@
 export default {
   data() {
     return {
-      options: ["Rock", "Paper", "Scissors"],
+      options: ["rock", "paper", "scissor"],
       pcScore: 0,
-      userScore: 5,
+      userScore: 0,
       pcChoice: "",
       userChoice: "",
       result: "hello",
-      showResult: "showResult",
+      showResult: "",
       gameStatus: "",
     };
   },
@@ -67,9 +67,74 @@ export default {
     choose(choice) {
       this.userChoice = choice;
       this.pcChoice = this.options[(Math.random() * this.options.length) | 0];
-      if (this.pcScore < 5 && this.userScore < 5) {
-        console.log("hi");
+      this.compare();
+      console.log(this.userChoice);
+      console.log(this.pcChoice);
+    },
+    compare() {
+      if (this.userChoice === this.pcChoice) {
+        this.result = "No points!";
+        this.showResult = "showResult";
+        setTimeout(() => {
+          this.showResult = "";
+        }, 1000);
       } else {
+        if (this.userChoice === "scissor") {
+          if (this.pcChoice === "paper") {
+            this.result = "Point for user!";
+            this.showResult = "showResult";
+            setTimeout(() => {
+              this.showResult = "";
+            }, 1000);
+            this.userScore++;
+          } else {
+            this.result = "Point for PC!";
+            this.showResult = "showResult";
+            setTimeout(() => {
+              this.showResult = "";
+            }, 1000);
+            this.pcScore++;
+          }
+        }
+        if (this.userChoice === "paper") {
+          if (this.pcChoice === "rock") {
+            this.result = "Point for user!";
+            this.showResult = "showResult";
+            setTimeout(() => {
+              this.showResult = "";
+            }, 1000);
+            this.userScore++;
+          } else {
+            this.result = "Point for PC!";
+            this.showResult = "showResult";
+            setTimeout(() => {
+              this.showResult = "";
+            }, 1000);
+            this.pcScore++;
+          }
+        }
+        if (this.userChoice === "rock") {
+          if (this.pcChoice === "scissor") {
+            this.result = "Point for user!";
+            this.showResult = "showResult";
+            setTimeout(() => {
+              this.showResult = "";
+            }, 1000);
+            this.userScore++;
+          } else {
+            this.result = "Point for PC!";
+            this.showResult = "showResult";
+            setTimeout(() => {
+              this.showResult = "";
+            }, 1000);
+            this.pcScore++;
+          }
+        }
+        this.status();
+      }
+    },
+    status() {
+      if (this.pcScore === 5 || this.userScore === 5) {
         this.gameStatus = "finished";
       }
     },
