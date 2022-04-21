@@ -286,7 +286,8 @@ footer {
 }
 @media screen and (max-width: 900px) {
   .game-container {
-    margin: 5rem 0;
+    margin: 2rem 0;
+    gap: 1rem;
   }
   .choice-container {
     padding: 1rem;
