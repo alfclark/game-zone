@@ -62,7 +62,6 @@ export default {
   },
   methods: {
     restart() {
-      window.location.reload();
       this.pcScore = 0;
       this.userScore = 0;
       this.showResult = "";
