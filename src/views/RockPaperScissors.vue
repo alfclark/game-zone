@@ -63,6 +63,10 @@ export default {
   methods: {
     restart() {
       window.location.reload();
+      this.pcScore = 0;
+      this.userScore = 0;
+      this.showResult = "";
+      this.gameStatus = "";
     },
     choose(choice) {
       this.userChoice = choice;
