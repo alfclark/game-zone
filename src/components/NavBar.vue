@@ -37,7 +37,9 @@
             >
               <li>
                 <a class="dropdown-item" href="#"
-                  ><router-link to="/RPS">Rock Paper Scissors</router-link></a
+                  ><router-link to="/rock-paper-scissors"
+                    >Rock Paper Scissors</router-link
+                  ></a
                 >
               </li>
               <li>
@@ -47,7 +49,7 @@
               </li>
               <li>
                 <a class="dropdown-item" href="#"
-                  ><router-link to="/about">Rock Paper Scissors</router-link></a
+                  ><router-link to="/tic-tac-toe">Tic Tac Toe</router-link></a
                 >
               </li>
             </ul>

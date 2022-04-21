@@ -8,14 +8,19 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/RPS",
-    name: "RPS",
+    path: "/rock-paper-scissors",
+    name: "rock-paper-scissors",
     component: () => import("../views/RockPaperScissors.vue"),
   },
   {
     path: "/tetris",
     name: "tetris",
     component: () => import("../views/TetrisView.vue"),
+  },
+  {
+    path: "/tic-tac-toe",
+    name: "tic-tac-toe",
+    component: () => import("../views/TicTacToe.vue"),
   },
 ];
 
