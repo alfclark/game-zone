@@ -42,7 +42,7 @@
               </li>
               <li>
                 <a class="dropdown-item" href="#"
-                  ><router-link to="/about">Tetris</router-link></a
+                  ><router-link to="/tetris">Tetris</router-link></a
                 >
               </li>
               <li>

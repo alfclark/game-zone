@@ -12,6 +12,11 @@ const routes = [
     name: "RPS",
     component: () => import("../views/RockPaperScissors.vue"),
   },
+  {
+    path: "/tetris",
+    name: "tetris",
+    component: () => import("../views/TetrisView.vue"),
+  },
 ];
 
 const router = createRouter({
