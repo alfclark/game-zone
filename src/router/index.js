@@ -22,6 +22,11 @@ const routes = [
     name: "tic-tac-toe",
     component: () => import("../views/TicTacToe.vue"),
   },
+  {
+    path: "/ping-pong",
+    name: "ping-pong",
+    component: () => import("../views/PingPong.vue"),
+  },
 ];
 
 const router = createRouter({
