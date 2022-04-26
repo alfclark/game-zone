@@ -3,11 +3,24 @@
     <div class="header">
       <h1 class="title">Tic Tac Toe</h1>
       <h2>Three in a row wins!</h2>
-      <button :class="btnStatus" @click="startGame">Start Game</button>
+      <!--  <button :class="btnStatus" @click="startGame">Start Game</button> -->
     </div>
-    <div class="game-area" :class="gameStart">
+    <!-- <div class="game-area" :class="gameStart">
       <span class="move">It is: {{ turn }}'s turn</span>
-      <div class="board"></div>
+      <div id="board" class="board">
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+      </div>
+      <div class="controls">
+        <button class="reset" @click="reset">Reset</button>
+      </div>
     </div>
   </div>
   <div class="restart" :class="gameStatus">
@@ -15,7 +28,7 @@
       <h1 class="status">Winner is: {{ winner }}</h1>
       <h2 class="winner"></h2>
       <button @click="restart">Restart Game</button>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -23,13 +36,11 @@
 export default {
   data() {
     return {
-      btnStatus: "",
       gameStart: "",
-      turn: "O",
+      btnStatus: "",
     };
   },
   methods: {
-    restart() {},
     startGame() {
       this.gameStart = "show";
       this.btnStatus = "hide";
@@ -55,7 +66,15 @@ h2 {
   background-color: var(--green);
   animation: heartbeat 4s infinite;
 }
-.header button:hover {
+.reset {
+  margin: 1rem;
+  border: none;
+  padding: 0.5rem;
+  color: white;
+  background-color: var(--green);
+}
+.header button:hover,
+.reset:hover {
   background-color: var(--dark);
   transition: 0.3s;
 }
@@ -81,6 +100,36 @@ h2 {
 .show {
   display: flex;
   flex-direction: column;
+}
+.board {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 33% 33% 33%;
+  max-width: 300px;
+}
+.tile {
+  border: 1px solid white;
+  min-width: 100px;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  cursor: pointer;
+}
+.playerX {
+  color: var(--green);
+}
+.playerY {
+  color: var(--red);
+}
+.controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
 }
 .restart {
   z-index: 4;
