@@ -19,6 +19,7 @@ export default {
 <style>
 :root {
   --green: #42b983;
+  --red: rgb(171, 50, 50);
   --dark: rgb(37, 36, 36);
 }
 @keyframes shift1 {
