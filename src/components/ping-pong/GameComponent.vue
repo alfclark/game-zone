@@ -9,20 +9,18 @@
           |
           <div id="computer-score">PC: {{ pcScore }}</div>
         </div>
-        <div class="ball" ref="ball"></div>
-        <div class="paddle left" ref="playerPaddle"></div>
-        <div class="paddle right" ref="computerPaddle"></div>
       </div>
     </div>
+    <ComingSoon />
   </div>
 </template>
 
 <script>
-/* import Ball from "./ball";
-import Paddle from "./paddle"; */
-
+import ComingSoon from "@/components/ComingSoon.vue";
 export default {
-  setup() {},
+  components: {
+    ComingSoon,
+  },
   data() {
     return {
       playerScore: 0,
@@ -41,50 +39,21 @@ h2 {
   color: white;
   font-size: 1.5rem;
 }
+.game {
+  display: none;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
 
 .game-container {
   display: flex;
   flex-direction: column;
   gap: 5rem;
   margin: 1rem 0;
-}
-.paddle {
-  --position: 50;
-  position: absolute;
-  background-color: white;
-  top: calc(var(--position) * 1vh);
-  transform: translateY(-50%);
-  width: 1vh;
-  height: 10vh;
-}
-
-.paddle.left {
-  left: 1vw;
-}
-
-.paddle.right {
-  right: 1vw;
-}
-
-.ball {
-  --x: 50;
-  --y: 50;
-  position: absolute;
-  background-color: white;
-  left: calc(var(--x) * 1vw);
-  top: calc(var(--y) * 1vh);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  width: 2.5vh;
-  height: 2.5vh;
-}
-
-.score {
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: white;
-  gap: 1rem;
 }
 </style>
