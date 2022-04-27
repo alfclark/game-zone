@@ -2,50 +2,80 @@
   <div class="game-container">
     <div class="header">
       <h1 class="title">Tic Tac Toe</h1>
-      <h2>Three in a row wins!</h2>
-      <!--  <button :class="btnStatus" @click="startGame">Start Game</button> -->
+      <h2>Three in line wins!</h2>
+      <span class="move" :class="showResult">{{ result }}</span>
     </div>
-    <!-- <div class="game-area" :class="gameStart">
-      <span class="move">It is: {{ turn }}'s turn</span>
-      <div id="board" class="board">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
+    <main class="board">
+      <h3 class="move">Player {{ player }}'s turn</h3>
+
+      <div class="column">
+        <div v-for="(row, x) in board" :key="x" class="flex">
+          <div
+            class="tile"
+            v-for="(cell, y) in row"
+            :key="y"
+            @click="MakeMove(x, y)"
+          >
+            {{ cell === "X" ? "X" : cell === "O" ? "O" : "" }}
+          </div>
+        </div>
       </div>
-      <div class="controls">
-        <button class="reset" @click="reset">Reset</button>
+
+      <div class="text-center">
+        <button @click="ResetGame" class="reset">Reset</button>
       </div>
-    </div>
+    </main>
   </div>
-  <div class="restart" :class="gameStatus">
+  <div class="restart" v-if="winner" :class="gameStatus">
     <div class="message">
       <h1 class="status">Winner is: {{ winner }}</h1>
       <h2 class="winner"></h2>
-      <button @click="restart">Restart Game</button>
-    </div> -->
+      <button @click="ResetGame">Restart Game</button>
+    </div>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      gameStart: "",
-      btnStatus: "",
-    };
-  },
-  methods: {
-    startGame() {
-      this.gameStart = "show";
-      this.btnStatus = "hide";
-    },
-  },
+<script setup>
+import { ref, computed } from "vue";
+const player = ref("X");
+const board = ref([
+  ["", "", ""],
+  ["", "", ""],
+  ["", "", ""],
+]);
+const CalculateWinner = (board) => {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+      return board[a];
+    }
+  }
+  return null;
+};
+const winner = computed(() => CalculateWinner(board.value.flat()));
+const MakeMove = (x, y) => {
+  if (winner.value) return;
+  if (board.value[x][y]) return;
+  board.value[x][y] = player.value;
+  player.value = player.value === "X" ? "O" : "X";
+};
+const ResetGame = () => {
+  board.value = [
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""],
+  ];
+  player.value = "X";
 };
 </script>
 
@@ -58,14 +88,7 @@ h2 {
   color: white;
   font-size: 1.5rem;
 }
-.header button {
-  margin: 1rem;
-  border: none;
-  padding: 0.5rem;
-  color: white;
-  background-color: var(--green);
-  animation: heartbeat 4s infinite;
-}
+
 .reset {
   margin: 1rem;
   border: none;
@@ -73,14 +96,12 @@ h2 {
   color: white;
   background-color: var(--green);
 }
-.header button:hover,
+
 .reset:hover {
   background-color: var(--dark);
   transition: 0.3s;
 }
-.hide {
-  display: none;
-}
+
 .move {
   color: white;
   font-size: 1rem;
@@ -92,31 +113,29 @@ h2 {
   gap: 5rem;
   margin: 1rem 0;
 }
-.game-area {
-  display: none;
+
+.column {
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-.show {
+.row {
   display: flex;
-  flex-direction: column;
-}
-.board {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 33% 33% 33%;
-  max-width: 300px;
 }
 .tile {
   border: 1px solid white;
-  min-width: 100px;
-  min-height: 100px;
+  width: 5rem;
+  height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
+  font-size: 40px;
   cursor: pointer;
+  color: white;
+}
+.tile:hover {
+  background-color: grey;
+  transition: 0.4s;
 }
 .playerX {
   color: var(--green);
@@ -124,13 +143,7 @@ h2 {
 .playerY {
   color: var(--red);
 }
-.controls {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1em;
-}
+
 .restart {
   z-index: 4;
   position: absolute;
@@ -138,15 +151,12 @@ h2 {
   left: 0;
   background: rgba(32, 32, 32, 0.831);
   color: var(--green);
+  display: flex;
   width: 100%;
   height: 100%;
-  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.finished {
-  display: flex;
 }
 
 .message {
@@ -155,10 +165,6 @@ h2 {
   padding: 70px;
   align-items: center;
   justify-content: center;
-}
-
-.restart h2 {
-  animation: heartbeat 2s ease 0s infinite normal forwards;
 }
 
 .restart button {
