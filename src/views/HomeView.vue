@@ -23,7 +23,7 @@
     </div>
     <div class="choose-msg">
       <i class="fa-solid fa-dragon"></i>
-      <h2>Choose a game from Navbar the menu</h2>
+      <h2>Choose a game from the Navbar menu</h2>
       <i class="fa-solid fa-dragon"></i>
     </div>
   </div>
