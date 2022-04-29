@@ -49,7 +49,7 @@
               </li>
               <li>
                 <a class="dropdown-item" href="#"
-                  ><router-link to="/hangman">Hangman</router-link></a
+                  ><router-link to="/hangman">Hangman (PC ONLY)</router-link></a
                 >
               </li>
               <li>

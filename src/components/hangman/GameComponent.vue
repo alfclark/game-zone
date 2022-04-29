@@ -1,7 +1,7 @@
 <template>
   <div class="game-container">
     <div class="header">
-      <h1 class="title">Hangman</h1>
+      <h1 class="title">Hangman (PC ONLY)</h1>
       <h2>Can you find the word?</h2>
     </div>
     <div class="game">
