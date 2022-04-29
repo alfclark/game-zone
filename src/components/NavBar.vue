@@ -49,6 +49,11 @@
               </li>
               <li>
                 <a class="dropdown-item" href="#"
+                  ><router-link to="/hangman">Hangman</router-link></a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
                   ><router-link to="/ping-pong">Ping-Pong</router-link></a
                 >
               </li>

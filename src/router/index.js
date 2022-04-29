@@ -27,6 +27,11 @@ const routes = [
     name: "ping-pong",
     component: () => import("../views/PingPong.vue"),
   },
+  {
+    path: "/hangman",
+    name: "hangman",
+    component: () => import("../views/HangMan.vue"),
+  },
 ];
 
 const router = createRouter({
