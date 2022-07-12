@@ -27,6 +27,7 @@ export default {
   --dark: #484349;
   --white: #f7f0f0;
   --blue: #8af3ff;
+  --yellow: #fff5c9;
 }
 @keyframes shift1 {
   0% {

@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: bisque;
+  background-color: var(--yellow);
   border-radius: 0;
 }
 
