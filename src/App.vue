@@ -18,9 +18,12 @@ export default {
 
 <style>
 :root {
-  --green: #42b983;
+  --green: #18a999;
+  --darkGreen: #109648;
   --red: rgb(171, 50, 50);
-  --dark: rgb(37, 36, 36);
+  --dark: #484349;
+  --white: #f7f0f0;
+  --blue: #8af3ff;
 }
 @keyframes shift1 {
   0% {
@@ -71,7 +74,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: rgb(58, 58, 58);
+  background-color: var(--white);
   height: 100vh;
 }
 </style>
