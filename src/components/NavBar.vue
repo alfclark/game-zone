@@ -1,7 +1,9 @@
 <template>
-  <nav class="navbar sticky-top navbar-expand-lg">
+  <nav class="navbar navbar-light sticky-top navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">AC</a>
+      <a class="navbar-brand" href="#"
+        ><img class="logo" src="@/assets/logo.png" alt="logo"
+      /></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -89,6 +91,11 @@ export default {
 nav {
   background-color: var(--white);
   border-bottom: solid var(--dark) 1px;
+}
+.navbar-toggler-icon {
+}
+.logo {
+  width: 50px;
 }
 
 nav a {
