@@ -1,4 +1,5 @@
 <template>
+  <UnderConstruction />
   <NavBar />
   <FooterComponent />
 </template>
@@ -6,12 +7,14 @@
 <script>
 import NavBar from "./components/NavBar.vue";
 import FooterComponent from "./components/FooterComponent.vue";
+import UnderConstruction from "./components/UnderConstruction.vue";
 
 export default {
   name: "App",
   components: {
     NavBar,
     FooterComponent,
+    UnderConstruction,
   },
 };
 </script>
