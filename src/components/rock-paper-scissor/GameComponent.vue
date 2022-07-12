@@ -184,7 +184,7 @@ a {
 .game-container {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 2rem;
   margin: 1rem 0;
 }
 
