@@ -15,8 +15,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: var(--green);
+  background-color: var(--dark);
+  color: var(--darkGreen);
   padding: 15px 20px;
   transition: opacity 0.3s ease-in-out;
   position: fixed;

@@ -155,16 +155,19 @@ export default {
 
 <style scoped>
 .header {
-  color: var(--green);
+  color: var(--dark);
+}
+.title {
+  font-weight: 600;
 }
 
 h2 {
-  color: white;
+  color: var(--dark);
   font-size: 1.5rem;
 }
 
 .move {
-  color: white;
+  color: var(--darkGreen);
   font-size: 1.5rem;
   opacity: 0;
   transition: 0.3s;
@@ -197,19 +200,20 @@ a {
   padding: 2rem;
   margin: 1rem;
   width: 12rem;
-  background-color: var(--dark);
   border-radius: 15px;
-  border: 0.2rem solid black;
+  border: 0.2rem solid var(--dark);
   color: white;
   font-size: 2rem;
   cursor: pointer;
+  color: var(--dark);
+  transition: 0.4s;
 }
 
 .choice-container:hover {
   transform: scale(1.1);
   color: var(--green);
-  transition: 0.4s;
   cursor: pointer;
+  border: 0.2rem solid var(--green);
 }
 
 .fa-regular {
@@ -218,7 +222,7 @@ a {
 }
 
 .score-title {
-  color: var(--green);
+  color: var(--dark);
   font-size: 1.5rem;
   text-decoration: underline;
   font-weight: 600;
@@ -228,20 +232,10 @@ a {
   margin-top: -30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: var(--green);
+  color: var(--dark);
   font-size: 1.5rem;
   font-weight: 700;
   position: relative;
-}
-
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(37, 36, 36);
-  color: var(--green);
-  text-align: center;
 }
 
 .restart {
@@ -249,8 +243,8 @@ footer {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(32, 32, 32, 0.831);
-  color: var(--green);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--blue);
   width: 100%;
   height: 100%;
   display: none;
@@ -263,8 +257,7 @@ footer {
 }
 
 .message {
-  background-color: rgb(0, 0, 0);
-  border: 0.2rem solid black;
+  background-color: var(--dark);
   padding: 70px;
   align-items: center;
   justify-content: center;
@@ -275,9 +268,9 @@ footer {
 }
 
 .restart button {
-  background-color: var(--green);
+  background-color: var(--blue);
   border: none;
-  color: white;
+  color: var(--dark);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;

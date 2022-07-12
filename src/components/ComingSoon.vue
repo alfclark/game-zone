@@ -9,7 +9,7 @@
 .msg {
   font-size: 3rem;
   margin-top: 10rem;
-  color: white;
-  background-color: var(--green);
+  color: var(--blue);
+  background-color: var(--dark);
 }
 </style>

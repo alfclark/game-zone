@@ -32,11 +32,14 @@ export default {
 
 <style scoped>
 .header {
-  color: var(--green);
+  color: var(--dark);
+}
+.title {
+  font-weight: 600;
 }
 
 h2 {
-  color: white;
+  color: var(--dark);
   font-size: 1.5rem;
 }
 .game {

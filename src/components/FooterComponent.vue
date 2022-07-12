@@ -11,13 +11,14 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: var(--dark);
-  color: var(--green);
+  background-color: var(--white);
+  color: var(--dark);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1rem 0;
+  border-top: solid var(--dark) 1px;
 }
 footer p {
   margin: 0;

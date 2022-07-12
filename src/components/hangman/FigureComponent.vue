@@ -37,7 +37,7 @@ export default {
 }
 .figure-container {
   fill: transparent;
-  stroke: #fff;
+  stroke: var(--dark);
   stroke-width: 4px;
   stroke-linecap: round;
 }

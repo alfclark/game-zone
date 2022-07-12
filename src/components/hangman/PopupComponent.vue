@@ -2,7 +2,7 @@
   <div v-if="finalMessage" class="popup-container" id="popup-container">
     <div class="popup">
       <h2>{{ finalMessage }}</h2>
-      <h3 v-show="status === 'lose'">...the word was: {{ word }}</h3>
+      <h3 v-show="status === 'lose'">The word was: {{ word }}</h3>
       <button @click="reset">Play Again</button>
     </div>
   </div>
@@ -42,26 +42,26 @@ export default {
 }
 
 .popup {
-  background-color: rgb(0, 0, 0);
-  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+  background-color: var(--dark);
+  box-shadow: 0 0 5px #00000040;
   padding: 20px;
   text-align: center;
-  color: var(--green);
+  color: var(--blue);
 }
 .popup button {
   cursor: pointer;
-  background-color: var(--green);
-  color: white;
+  background-color: var(--blue);
+  color: var(--dark);
   border: 0;
   margin-top: 20px;
   padding: 15px 32px;
   font-size: 16px;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .popup button:hover {
   background-color: grey;
-  transition: 0.5s;
   transform: scale(1.1);
   color: black;
 }

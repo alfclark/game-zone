@@ -42,7 +42,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--dark);
   margin: 10rem 0;
 }
 .home .fa-gamepad {

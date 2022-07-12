@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+  <nav class="navbar sticky-top navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">AC</a>
       <button
@@ -32,7 +32,7 @@
               Games
             </a>
             <ul
-              class="dropdown-menu dropdown-menu-dark"
+              class="dropdown-menu dropdown-menu"
               aria-labelledby="navbarDropdown"
             >
               <li>
@@ -53,12 +53,12 @@
                 >
               </li>
               <li>
-                <a class="dropdown-item" href="#"
+                <a class="dropdown-item disabled" href="#"
                   ><router-link to="/ping-pong">Ping-Pong</router-link></a
                 >
               </li>
               <li>
-                <a class="dropdown-item" href="#"
+                <a class="dropdown-item disabled" href="#"
                   ><router-link to="/tetris">Tetris</router-link></a
                 >
               </li>
@@ -87,17 +87,21 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 nav {
-  background-color: var(--dark);
+  background-color: var(--white);
+  border-bottom: solid var(--dark) 1px;
 }
 
 nav a {
   font-weight: bold;
-  color: rgba(255, 255, 255, 0.756);
+  color: var(--dark);
   text-decoration: none;
 }
 
 nav a.router-link-exact-active {
-  color: var(--green);
+  color: var(--dark);
   text-decoration: underline;
+}
+.disabled {
+  text-decoration: line-through;
 }
 </style>

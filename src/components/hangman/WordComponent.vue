@@ -18,12 +18,12 @@ export default {
 <style scoped>
 .word {
   display: flex;
-  color: var(--green);
+  color: var(--darkGreen);
   margin-top: 1rem;
 }
 
 .letter {
-  border-bottom: 3px solid var(--green);
+  border-bottom: 3px solid var(--darkGreen);
   display: inline-flex;
   font-size: 30px;
   align-items: center;
